@@ -22,7 +22,7 @@ FROM ubuntu:latest
 
 USER root
 
-ARG TZ="UTC"
+ARG TZ="Pacific/Auckland"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone
 
