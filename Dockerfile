@@ -1,7 +1,7 @@
 FROM alpine:3.18 as downloader
 
 ARG rport_version=0.9.12
-ARG frontend_build=0.9.12-15-build-1143
+ARG frontend_build=0.9.12-17-build-1145
 #ARG rportplus=0.1.0
 ARG NOVNC_VERSION=1.3.0
 
@@ -48,6 +48,8 @@ RUN touch /var/lib/rport/rport.log && chown rport /var/lib/rport/rport.log
 #RUN service fail2ban restart
 
 USER rport
+
+RUN chmod 755 -R /var/lib/rport/
 
 EXPOSE 8080
 EXPOSE 3000
